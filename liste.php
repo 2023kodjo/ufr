@@ -9,7 +9,8 @@
     <title>Liste_UFR</title>
 </head>
 
-<body>
+<body class="">
+	<br>
 	<div class="container">
 		<h1>Liste des étudiants inscrits</h1>
 		<table class="table table-striped">
@@ -21,7 +22,6 @@
                     <th>Date_d_entree_a_l_ufr</th>
                     <th>Personne_a_prevenir</th>
 				</tr>
-
 			<?php
 
 						// Requête SQL pour récupérer les données des etudiants
