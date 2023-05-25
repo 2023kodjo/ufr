@@ -9,10 +9,22 @@
     <title>Liste_UFR</title>
 </head>
 
+
 <body class="">
 	<br>
 	<div class="container">
-		<h1>Liste des étudiants inscrits</h1>
+		<div class="row">
+			<div class="col md-12">
+		      <img src="../projet_application_ufr/image/deux_etudiants plan coupé (2).png" alt="" width="100%" >
+			  <a href="index.php"><button type="button" class="btn btn-outline-danger  mt-3 offset-9 col-md-2"><img src="../projet_application_ufr/image/icone 2.png" alt="" width="20%"> Go Back</button></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col md-12 bg-success text-white text-center my-3">
+			<h1>Liste des étudiants inscrits</h1>
+			</div>
+		</div>
+		
 		<table class="table table-striped">
 				<tr>
 					<th>Nom</th>
@@ -45,9 +57,13 @@
 											}
 				?>
 
-
+             
         </table>
     </div>
+
+	<footer class="container text-white footer">
+       <h6 class=" text-center FT">Copyright © MyUFR / Université Joseph KI-ZERBO 2023 - Tous droit réservés.</h6>
+    </footer>
 	<!-- Chargement des fichiers JavaScript de Bootstrap -->
 	<script src="../style/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

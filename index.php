@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container text-white D">
-        <div class="row offset-1">
+        <div class="row pt-1">
             <div class="col">
                <h2>MyUFR</h2>
                <p>Plate forme d'inscription rapide à Unité de formation et de recherche (UFR)</p> 
@@ -36,9 +36,9 @@
        </div>
     </div>
   
-      <br>
+      
        
-    <div class="row offset-1 col-md-10 text-center text-white h">
+    <div class="row offset-1 col-md-10 text-center text-white mt-4 h">
            <h1><img class="logo" src="image/WhatsApp Image 2023-05-09 at 13.54.31.jpeg" alt="" width="50px" height="50px"> Université Joseph Ki-ZERBO</h1>
     </div>
          <div class="row text-center bg-danger offset-2 col-md-8 text-white">
