@@ -74,6 +74,7 @@ label{
 
   
   /* Boite message - notifications */
+  
   .radar-msg {
     display: block;
     position: absolute;
@@ -213,9 +214,13 @@ label{
   
   
 
-
-
 .s1b{
     background-image: url(../image/etude.jpg);
     height: 500px;
+}
+
+@media screen and (max-width:390) {
+
+  
+  
 }
