@@ -37,29 +37,37 @@
         </div> 
        </div>
 
-<?php
 
-// pour connecter enregistrement.php à connexion.php
-require'connexion.php';
-
-// code d'enregistrement 
-$NOM=$_POST['nom'];
-$PRENOM=$_POST['prenom'];
-$DATE_DE_NAISSANCE=$_POST['date_de_naissance'];
-$GENRE=$_POST['genre'];
-$DATE_D_ENTREE_A_L_UFR=$_POST['date_d_entree_a_l_ufr'];
-$PERSONNE_A_PREVENIR=$_POST['personne_a_prevenir'];
-
-$req="INSERT INTO etudiant (nom,prenom,date_de_naissance,genre,date_d_entree_a_l_ufr,personne_a_prevenir) values ('$NOM','$PRENOM','$DATE_DE_NAISSANCE','$GENRE','$DATE_D_ENTREE_A_L_UFR','$PERSONNE_A_PREVENIR')";
-$res=mysqli_query($conn,$req);
-if(isset($res)){
-    echo"";
+ <?php
+    session_start();
+    require'connexion.php'; 
+      if(isset($_POST)){
+        $nom=$_POST['nom'];
+        $prenom=$_POST['prenom'];
+        $date_de_naissance=$_POST['date_de_naissance'];
+        $genre=$_POST['genre'];
+        $date_d_entree_a_l_ufr=$_POST['date_d_entree_a_l_ufr'];
+        $personne_a_prevenir=$_POST['personne_a_prevenir'];
+        $query = "INSERT INTO etudiant (nom, prenom, date_de_naissance, genre, date_d_entree_a_l_ufr, personne_a_prevenir)
+        VALUES (:nom, :prenom, :date_de_naissance, :genre, :date_d_entree_a_l_ufr, :personne_a_prevenir)";
+        $query_run=$conn->prepare($query);
+        $query_run->bindParam(':nom',$nom);
+        $query_run->bindParam(':prenom',$prenom);
+        $query_run->bindParam(':date_de_naissance',$date_de_naissance);
+        $query_run->bindParam(':genre',$genre);
+        $query_run->bindParam(':date_d_entree_a_l_ufr',$date_d_entree_a_l_ufr); 
+        $query_run->bindParam(':personne_a_prevenir',$personne_a_prevenir);
+      try {
+        $query_run->execute();
+        $msg_success=" Vos données ont été bien enregistrées!";
+          } catch (PDOException $e) {
+                   $msg="Erreur d'enregistrement" . $e->getMessage();
+                   }
 }
-else{
-    echo"ERROR!";
-}
 
- ?>
+?>
+
+
 
 	<!-- Chargement des fichiers JavaScript de Bootstrap -->
 	<script src="../style/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>

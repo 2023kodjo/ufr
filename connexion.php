@@ -1,15 +1,16 @@
 <?php
-$conn=mysqli_connect('localhost','root','','ufr') or die(mysqli_error());
+// $conn=mysqli_connect('localhost','root','','ufr') or die(mysqli_error());
 ?>  
 
-
-<!--  
-try{
-$go=new PDO('mysql:host=localhost;dbname=ufr','root','');
-$go->exec('SET CHARACTER SET utf8');
-}
-catch(Exception $e){
-    die('erreur:'.$e->getMessage());
-} -->
-
-
+<?php
+ $servername = 'localhost';
+ $username = 'root';
+ $password = '';
+ $dbname = 'ufr';
+ 
+ //On essaie de se connecter
+ 
+ $conn = new PDO("mysql:host=$servername;dbname=ufr", $username, $password);
+ if ($conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION)){
+ }else{ echo "Erreur : " . $e->POSTMessage(); }
+?>
